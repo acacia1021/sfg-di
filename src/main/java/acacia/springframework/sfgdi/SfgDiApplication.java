@@ -1,10 +1,15 @@
 package acacia.springframework.sfgdi;
 
+import java.lang.reflect.Constructor;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import acacia.springframework.sfgdi.controllers.ConstructorInjectedController;
 import acacia.springframework.sfgdi.controllers.MyController;
+import acacia.springframework.sfgdi.controllers.PropertyInjectedController;
+import acacia.springframework.sfgdi.controllers.SetterInjectedController;
 
 @SpringBootApplication
 public class SfgDiApplication {
@@ -17,6 +22,25 @@ public class SfgDiApplication {
 
 		System.out.println(greeting);
 
+		System.out.println("----- Property");
+
+		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
+
+		System.out.println(propertyInjectedController.getGreeting());
+
+
+		System.out.println("----- Setter");
+
+		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
+
+		System.out.println(setterInjectedController.getGreeting());
+	
+	System.out.println("----- Constructor");
+
+	ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
+
+	System.out.println(constructorInjectedController.getGreeting());
+	
 	}
 
 }
