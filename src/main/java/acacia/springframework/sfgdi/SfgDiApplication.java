@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import acacia.springframework.sfgdi.controllers.ConstructorInjectedController;
+import acacia.springframework.sfgdi.controllers.I18nController;
 import acacia.springframework.sfgdi.controllers.MyController;
 import acacia.springframework.sfgdi.controllers.PropertyInjectedController;
 import acacia.springframework.sfgdi.controllers.SetterInjectedController;
@@ -16,11 +17,16 @@ public class SfgDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+		
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+
 		MyController myController = (MyController) ctx.getBean("myController");
 
 		// String greeting = myController.sayHello();
 
 		// System.out.println(greeting);
+
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("----- Primary Bean");
 		System.out.println(myController.sayHello());
