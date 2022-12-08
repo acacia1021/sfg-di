@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import acacia.springframework.sfgdi.services.GreetingService;
-import acacia.springframework.sfgdi.services.GreetingServiceImpl;
+import acacia.springframework.sfgdi.services.ConstructorGreetingService;
 
 class ConstructorInjectedControllerTest {
     ConstructorInjectedController controller;
@@ -12,7 +12,7 @@ class ConstructorInjectedControllerTest {
     @BeforeEach
     void setUp() {
 
-        controller = new ConstructorInjectedController(new GreetingServiceImpl());
+        controller = new ConstructorInjectedController(new ConstructorGreetingService());
 
     }
 
