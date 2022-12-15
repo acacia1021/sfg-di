@@ -1,3 +1,7 @@
+# My Notes:
+
+- Video 34: PropertyInjected is the least preferred method, SetterInjected COntroller - line 16 - injected & most preferred method is through the constructor, line 15 with Impl()
+
 # Dependency Injection Examples
 
 This repository is for an example application built in my [Spring Framework 5 - Beginner to Guru](https://www.udemy.com/testing-spring-boot-beginner-to-guru/?couponCode=GITHUB_REPO) online course
