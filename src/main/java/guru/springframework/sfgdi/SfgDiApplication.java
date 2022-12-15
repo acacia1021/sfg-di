@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = {"guru.springframework.sfgdi", "com.springframework.pets"})
+//We wouldn't need Component Scan if we are treating the services like a 3rd party in PetServiceFactory
+// @ComponentScan(basePackages = {"guru.springframework.sfgdi", "com.springframework.pets"})
 @SpringBootApplication
 public class SfgDiApplication {
 
