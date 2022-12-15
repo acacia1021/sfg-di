@@ -1,27 +1,21 @@
-package acacia.springframework.sfgdi.controllers;
+package guru.springframework.sfgdi.controllers;
 
+import guru.springframework.sfgdi.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
-import acacia.springframework.sfgdi.services.GreetingService;
-
+/**
+ * Created by jt on 12/26/19.
+ */
 @Controller
 public class MyController {
 
     private final GreetingService greetingService;
 
-    
-
     public MyController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
-
-
     public String sayHello(){
-        // System.out.println("Hello World!!!");
-        // return "Hi Folks!";
-
         return greetingService.sayGreeting();
     }
-    
 }

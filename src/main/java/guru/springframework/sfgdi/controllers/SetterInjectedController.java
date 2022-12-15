@@ -1,16 +1,17 @@
-package acacia.springframework.sfgdi.controllers;
+package guru.springframework.sfgdi.controllers;
 
+import guru.springframework.sfgdi.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-import acacia.springframework.sfgdi.services.GreetingService;
-
+/**
+ * Created by jt on 12/26/19.
+ */
 @Controller
 public class SetterInjectedController {
-    
-    private GreetingService greetingService;
 
+    private GreetingService greetingService;
 
     @Qualifier("setterInjectedGreetingService")
     @Autowired
@@ -21,5 +22,4 @@ public class SetterInjectedController {
     public String getGreeting(){
         return greetingService.sayGreeting();
     }
-
 }
