@@ -2,6 +2,7 @@ package guru.springframework.sfgdi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
@@ -17,6 +18,8 @@ import guru.springframework.sfgdi.services.PrimaryGreetingService;
 import guru.springframework.sfgdi.services.PropertyInjectedGreetingService;
 import guru.springframework.sfgdi.services.SetterInjectedGreetingService;
 
+
+@ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
@@ -63,10 +66,11 @@ public class GreetingServiceConfig {
     }
 
     // To make a Spring Component, add the annotation @Bean
-    @Bean
-    ConstructorGreetingService constructorGreetingService() {
-        return new ConstructorGreetingService();
-    }
+    // @Bean
+    //Commented out bean above & constructor below, in order to define inside of the sfgdi-config.xml file
+    // ConstructorGreetingService constructorGreetingService() {
+    //     return new ConstructorGreetingService();
+    // }
 
     // To make a Spring Component, add the annotation @Bean
     @Bean
